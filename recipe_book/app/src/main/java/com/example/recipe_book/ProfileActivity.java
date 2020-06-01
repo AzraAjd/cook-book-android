@@ -22,6 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView imageView;
     ImageView back;
     Button logout;
+    Button addRecipe;
 
     User user = new User();
 
@@ -77,6 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
         imageView = findViewById(R.id.profilePicture);
         back = findViewById(R.id.imgBack);
         logout = findViewById(R.id.btnLogOut);
+        addRecipe = findViewById(R.id.btnAddRecipe);
 
 
         name = user.getName();
@@ -100,6 +102,15 @@ public class ProfileActivity extends AppCompatActivity {
             //@Override
             public void onClick(View v) {
                 Intent i = new Intent(ProfileActivity.this, Login.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        addRecipe.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            public void onClick(View v) {
+                Intent i = new Intent(ProfileActivity.this, AddRecipeActivity.class);
                 startActivity(i);
             }
         });
